@@ -1,5 +1,5 @@
 html, body {
-	margin: 0;
+	margin: 100;
 	padding: 0;
 	width: 100%;
 	height: 100%;
@@ -9,7 +9,7 @@ body
 {
 	text-align: center;
 	font-family: Verdana, Helvetica, Arial, sans-serif;
-	font-size: 14px;
+	font-size: 20px;
 	color: #20333D;
 	background-color: #d5d2c8;
 }
@@ -26,7 +26,7 @@ body
 
 #center_box
 {
-	margin-top: 140px;
+	margin-top: 10px;
 	text-align: center;
 }
 
