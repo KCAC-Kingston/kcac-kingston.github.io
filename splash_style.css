@@ -32,3 +32,7 @@ body {
   text-transform: uppercase;
   font-family: Helvetica, Arial, Sans-serif;
 }
+
+img {
+  object-fit: scale-down;
+}
