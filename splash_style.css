@@ -14,6 +14,7 @@ body {
   background-color: #d5d2c8;
 }
 
+
 #wrapper {
   position: relative;
   text-align: left;
@@ -35,4 +36,9 @@ body {
 
 img {
   object-fit: scale-down;
+}
+
+.timertable{
+	background-color: #ffffff;
+	color: #000000;
 }
