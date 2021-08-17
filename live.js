@@ -49,7 +49,7 @@ async function startCountdown() {
     // If we are between the start and end time, the service is live
     if (now >= startTime && now <= endTime) {
       clearInterval(intervalId);
-      document.getElementById("countdown").innerHTML = "Our Servic is now live";
+      document.getElementById("countdown").innerHTML = "Our service is now live";
       return;
     }
 
@@ -62,11 +62,11 @@ async function startCountdown() {
       (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    // const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
     // Display the results in the element with id="countdown"
     document.getElementById("countdown").innerHTML =
-      days + " Days " + hours + " Hours " + minutes + " Minutes ";
+      `${days} Days, ${hours} Hours, ${minutes} Minutes`;
 
     // If we are past the end time, clear the countdown
     if (difference < 0) {
