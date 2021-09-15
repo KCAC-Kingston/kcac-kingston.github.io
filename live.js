@@ -19,12 +19,12 @@ async function startCountdown() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Accept: "application/json"
+      Accept: "application/json",
     },
     body: JSON.stringify({
       query: CURRENT_SERVICE_QUERY,
-      operationName: "CurrentService"
-    })
+      operationName: "CurrentService",
+    }),
   })
     .then((response) => response.json())
     .catch((error) => console.error(error));
@@ -49,7 +49,8 @@ async function startCountdown() {
     // If we are between the start and end time, the service is live
     if (now >= startTime && now <= endTime) {
       clearInterval(intervalId);
-      document.getElementById("countdown").innerHTML = "Our service is now live";
+      document.getElementById("countdown").innerHTML =
+        "Our service is now live";
       return;
     }
 
@@ -65,8 +66,9 @@ async function startCountdown() {
     // const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
     // Display the results in the element with id="countdown"
-    document.getElementById("countdown").innerHTML =
-      `${days} Days, ${hours} Hours, ${minutes} Minutes`;
+    document.getElementById(
+      "countdown"
+    ).innerHTML = `${days} Days, ${hours} Hours, ${minutes} Minutes`;
 
     // If we are past the end time, clear the countdown
     if (difference < 0) {

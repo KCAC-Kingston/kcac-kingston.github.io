@@ -1,6 +1,6 @@
 html,
 body {
-  margin: 100;
+  margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
@@ -13,7 +13,6 @@ body {
   color: #20333d;
   background-color: #d5d2c8;
 }
-
 
 #wrapper {
   position: relative;
@@ -38,12 +37,22 @@ img {
   object-fit: scale-down;
 }
 
-.timertable{
-	background-color: #ffffff;
-	color: #000000;
+.timertable {
+  background-color: #ffffff;
+  border-radius: 3px;
+  padding: 0px 10px 0px 10px;
+  color: #000000;
+  margin: 0 auto;
 }
 
-.infotable{
-	background-color: #FF2D00;
-	color: #000000;
+.infotable {
+  background-color: #ff8e76;
+  border-radius: 3px;
+  padding: 2px 10px 2px 10px;
+  color: #000000;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
