@@ -56,7 +56,10 @@ h3 {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-
+.pictable{
+	table-layout: fixed;
+	height: 400px;
+}
 .button {
   background-color: #4CAF50;
   border: none;
