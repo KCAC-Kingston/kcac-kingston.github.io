@@ -37,6 +37,10 @@ img {
   object-fit: scale-down;
 }
 
+.img_qr {
+  object-fit: fill;
+}
+
 .timertable {
   background-color: #ffffff;
   border-radius: 3px;
