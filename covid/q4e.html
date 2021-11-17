@@ -26,6 +26,15 @@ If public health has advised you that you do not need to self-isolate (for examp
         <br /> 
      
       </div>
-    </div>
+    </div><script src="acctoolbar.min.js"></script>
+    
+    <script>
+      window.onload = function() {
+        window.micAccessTool = new MicAccessTool({
+    
+          buttonPosition: 'right', // default is 'left'
+        });
+      }
+    </script>
   </body>
 </html>

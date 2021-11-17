@@ -101,5 +101,15 @@
 	  setTimeout(showSlides, 4000); // Change image every 2 seconds
 	}
 	</script>
+	  <script src="acctoolbar.min.js"></script>
+	  
+	  <script>
+		window.onload = function() {
+		  window.micAccessTool = new MicAccessTool({
+	  
+			buttonPosition: 'right', // default is 'left'
+		  });
+		}
+	  </script>
   </body>
 </html>

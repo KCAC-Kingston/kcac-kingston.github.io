@@ -35,6 +35,15 @@
 		<a href="index.html" class="button">Start Over 重新開始</a>
 		
       </div>
-    </div>
+    </div><script src="acctoolbar.min.js"></script>
+    
+    <script>
+      window.onload = function() {
+        window.micAccessTool = new MicAccessTool({
+    
+          buttonPosition: 'right', // default is 'left'
+        });
+      }
+    </script>
   </body>
 </html>

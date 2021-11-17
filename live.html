@@ -56,6 +56,15 @@
         <a href="https://kcac.ca">🏠Back to Home🏠</a><br /><br />
       </div>
     </div>
-    <script src="live.js"></script>
+    <script src="live.js"></script>  <script src="acctoolbar.min.js"></script>
+    
+    <script>
+      window.onload = function() {
+        window.micAccessTool = new MicAccessTool({
+    
+          buttonPosition: 'right', // default is 'left'
+        });
+      }
+    </script>
   </body>
 </html>
