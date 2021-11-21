@@ -52,6 +52,13 @@ img {
   color: #000000;
 }
 
+.accpt {
+  background-color: #4CAF50;
+  border-radius: 3px;
+  padding: 2px 10px 2px 10px;
+  color: #000000;
+}
+
 h3 {
   margin-top: 0px;
   margin-bottom: 0px;
