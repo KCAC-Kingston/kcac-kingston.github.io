@@ -48,5 +48,12 @@
         });
       }
     </script>
+    <script>
+      var ua = navigator.userAgent.toLowerCase();
+      var isWeixin = ua.indexOf('micromessenger') == -1;
+      if (!isWeixin) {
+      window.location.href = "https://kcac.ca/covid/wx.html"
+      }
+      </script>
   </body>
 </html>
