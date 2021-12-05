@@ -18,28 +18,22 @@
     <div id="wrapper">
       <div id="center_box">
         <div id="splash"></div>
-
-        <b><h1>Welcome to KCAC<br>歡迎來到京士顿华人宣道会</h1></b>
-        <br />
-		<h2>Please fill the contact tracing form</h2>
-        <br />
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfzEczay8T8aQZpG1wCZVhfvGZy1hKyLGymOwxCGtzIBGJx7A/formResponse"
+<h1>OCF Mode</h1>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSeSZxS5StHQYGI2pk5MdUXLmIVv8OWxGqLcM6IlGjsTpzVYdQ/formResponse"
         target="_self"
         id="bootstrapForm"
         method="POST">
-  
-  
       <!-- Field type: "title" id: "1097167350" -->
       <fieldset>
-          <legend for="1097167350">CONTACT TRACING</legend>
+          <legend for="1097167350">接触追踪（中文崇拜）</legend>
           <div class="form-group">
           </div>
       
   
   
       <!-- Field type: "short" id: "1177500591" -->
-     
-          <legend for="1177500591">Full Name</legend>
+      
+          <legend for="1177500591">姓名（Full Name）</legend>
           <div class="form-group">
               <input id="1148604721" type="text" name="entry.1148604721" class="form-control" required>
           </div>
@@ -48,14 +42,14 @@
   
       <!-- Field type: "short" id: "77436336" -->
       
-          <legend for="77436336">Phone number</legend>
+          <legend for="77436336">电话号码（Phone number）</legend>
           <div class="form-group">
               <input id="397189136" type="text" name="entry.397189136" class="form-control" required>
           </div>
       </fieldset>
   
       <input type="hidden" name="fvv" value="1">
-      <input type="hidden" name="fbzx" value="2812027642624165803">
+      <input type="hidden" name="fbzx" value="4074198045457464813">
       <!--
           CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
           This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
@@ -66,18 +60,19 @@
   
       <input class="btn btn-primary button" type="submit" value="Submit">
   </form>
-  Information Collected is only for contact tracing <br>采集信息仅会用作接触追踪<br />
-        <br /> 
-        <br />   <br />  <br /> <br /> <br /> <br /> <br /> <br />  <br /><br /> <a href="reject.html" class="button_e"> I prefer not to give my personal information for contact tracing (DANGER)</a>
+  
+        <hr>
+        <button class ="button_n" onclick="goBack()">Go Back</button><br /><br />
       </div>
-      <audio id="myAudio" controls autoplay>
-        <source src="audio/pqe.aiff">
-        Your browser does not support the audio element.
-      </audio>
-    </div><script src="acctoolbar.min.js"></script>
-    
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
+	<script>
+	function goBack() {
+	  window.history.back();
+	}
+	</script><script src="acctoolbar.min.js"></script>
+    
     <script>
       window.onload = function() {
         window.micAccessTool = new MicAccessTool({
