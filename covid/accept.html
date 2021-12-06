@@ -23,7 +23,9 @@
         <br />
 		<center><table class='accpt'><td>
         <h2>Thanks. 
-        <br>谢谢</h2></td></table></center>
+        <br>谢谢</h2><hr><div id="weekofsec"></div></td></table></center>
+        Please save the screenshot of this page.<br> You will need to show this when you're coming to church.
+        <br>请保存本页面截图。你将需要在来教会时出事本页面。
       <br /><br />
         
 		
@@ -39,6 +41,38 @@
           buttonPosition: 'right', // default is 'left'
         });
       }
+   Date.prototype.getWeekNumber = function(){
+  var d = new Date(Date.UTC(this.getFullYear(), this.getMonth(), this.getDate()));
+  var dayNum = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+  var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+  return Math.ceil((((d - yearStart) / 86400000) + 1)/7)
+};
+//change background colour according to week of the year
+//document.write('The current ISO week number is ' + new Date().getWeekNumber() + '<hr>');
+
+modWeek = new Date().getWeekNumber() % 5;
+document.getElementById("weekofsec").innerText = 'This is the ' + new Date().getWeekNumber() + ' service of this year.';
+//document.write(modWeek);
+switch(modWeek){
+  case 0:
+  document.body.style.backgroundColor = "#F3FF00";
+    break;
+  case 1:
+  document.body.style.backgroundColor = "#02F9B5";
+    break;
+  case 2:
+  document.body.style.backgroundColor = "#F04CFE";
+    break;
+  case 3:
+  document.body.style.backgroundColor = "#1BCF8B";
+    break;
+  case 4:
+  document.body.style.backgroundColor = "#ECAA9B";
+    break;
+
+}
+
     </script>
   </body>
 </html>
