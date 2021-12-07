@@ -50,6 +50,10 @@
 
 }*/
       }
+      window.history.pushState(null, "", window.location.href);
+window.onpopstate = function () {
+  window.location.href = "back.html"
+};
     </script>
   </body>
 </html>

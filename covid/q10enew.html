@@ -118,7 +118,10 @@ Date.prototype.getWeekNumber = function(){
 //document.write('The current ISO week number is ' + new Date().getWeekNumber() + '<hr>');
 curWeek = new Date().getWeekNumber()
 modWeek = curWeek % 5;
-
+window.history.pushState(null, "", window.location.href);
+window.onpopstate = function () {
+  window.location.href = "back.html"
+};
     </script>
   </body>
 </html>

@@ -35,6 +35,10 @@ If public health has advised you that you do not need to self-isolate (for examp
           buttonPosition: 'right', // default is 'left'
         });
       }
+      window.history.pushState(null, "", window.location.href);
+window.onpopstate = function () {
+  window.location.href = "back.html"
+};
     </script>
   </body>
 </html>

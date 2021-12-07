@@ -36,6 +36,10 @@ If you have since tested negative on a lab-based PCR test, the answer is "No."
           buttonPosition: 'right', // default is 'left'
         });
       }
+      window.history.pushState(null, "", window.location.href);
+window.onpopstate = function () {
+  window.location.href = "back.html"
+};
     </script>
   </body>
 </html>

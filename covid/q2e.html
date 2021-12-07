@@ -35,6 +35,10 @@ If you are fully vaccinated (it has been 14 or more days since your final dose o
           buttonPosition: 'right', // default is 'left'
         });
       }
+      window.history.pushState(null, "", window.location.href);
+window.onpopstate = function () {
+  window.location.href = "back.html"
+};
     </script>
   </body>
 </html>
