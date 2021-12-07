@@ -99,7 +99,7 @@
         error: function () {
             // Submit of form should be successful but JSONP callback will fail because Google Forms
             // does not support it, so this is handled as a failure.
-            
+            document.cookie = "fillingWoY=" + curWeek
             //alert('Form Submitted. Thanks.')
             window.location.href = "accept.html"
             // You can also redirect the user to a custom thank-you page:
@@ -107,6 +107,18 @@
         }
     })
 })
+Date.prototype.getWeekNumber = function(){
+  var d = new Date(Date.UTC(this.getFullYear(), this.getMonth(), this.getDate()));
+  var dayNum = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+  var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+  return Math.ceil((((d - yearStart) / 86400000) + 1)/7)
+};
+//change background colour according to week of the year
+//document.write('The current ISO week number is ' + new Date().getWeekNumber() + '<hr>');
+curWeek = new Date().getWeekNumber()
+modWeek = curWeek % 5;
+
     </script>
   </body>
 </html>

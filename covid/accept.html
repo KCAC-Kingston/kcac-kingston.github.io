@@ -50,11 +50,32 @@
 };
 //change background colour according to week of the year
 //document.write('The current ISO week number is ' + new Date().getWeekNumber() + '<hr>');
-
-modWeek = new Date().getWeekNumber() % 5;
+curWeek = new Date().getWeekNumber()
+modWeek = curWeek % 5;
 document.getElementById("weekofsec").innerText = 'This is the ' + new Date().getWeekNumber() + ' service of this year.';
 //document.write(modWeek);
-switch(modWeek){
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+let fillingWoYear = getCookie('fillingWoY')
+if(fillingWoYear != curWeek){
+  window.location.href = "expire.html"
+}
+else{
+  switch(modWeek){
   case 0:
   document.body.style.backgroundColor = "#F3FF00";
     break;
@@ -72,6 +93,8 @@ switch(modWeek){
     break;
 
 }
+}
+
 
     </script>
   </body>
