@@ -100,6 +100,7 @@
             // Submit of form should be successful but JSONP callback will fail because Google Forms
             // does not support it, so this is handled as a failure.
             document.cookie = "fillingWoY=" + curWeek
+            document.cookie = "formFillCount=" + addIumQty
             //alert('Form Submitted. Thanks.')
             window.location.href = "accept.html"
             // You can also redirect the user to a custom thank-you page:
@@ -119,6 +120,29 @@ Date.prototype.getWeekNumber = function(){
 curWeek = new Date().getWeekNumber()
 modWeek = curWeek % 5;
 
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+var qtyFormFilled = parseInt(getCookie('formFillCount'));
+//if(qtyFormFilled == null){qtyFormFilled = 0;}
+var addIumQty = qtyFormFilled + 1;
+//console.log('qtyFormFilled');
+//console.log(qtyFormFilled);
+//console.log('addIumQty');
+//console.log(addIumQty);
+////console.log('hi');
     </script>
   </body>
 </html>
