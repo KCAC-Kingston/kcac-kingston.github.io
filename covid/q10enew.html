@@ -136,7 +136,7 @@ function getCookie(cname) {
   return "";
 }
 var qtyFormFilled = parseInt(getCookie('formFillCount'));
-if(qtyFormFilled == 'NaN'){qtyFormFilled = 0;}
+//if(qtyFormFilled == null){qtyFormFilled = 0;}
 var addIumQty = qtyFormFilled + 1;
 console.log('qtyFormFilled');
 console.log(qtyFormFilled);
