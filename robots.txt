@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: 
+Disallow: /kiosk
+Disallow: /cursors
+Disallow: /images
+Disallow: /agreement.html
+Disallow: /404.html
