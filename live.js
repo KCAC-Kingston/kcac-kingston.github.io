@@ -15,7 +15,7 @@ query CurrentService {
 
 async function startCountdown() {
   // Fetch the current or next service data
-  const service = await fetch("https://live.kcac.ca/graphql", {
+  const service = await fetch("https://liveservice.kcac.ca/graphql", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
