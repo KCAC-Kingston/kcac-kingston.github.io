@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="icon" href="images/KCAC_Logo.ico" />
+    <title>Kingston Chinese Alliance Church 京士顿华人宣道会</title>
+    <link
+      rel="stylesheet"
+      href="splash_style.css"
+      type="text/css"
+      media="all"
+      title="no title"
+      charset="utf-8"
+    />
+  </head>
+  <body id="splash">
+    <div id="wrapper">
+      <div id="center_box">
+        <div id="splash"></div>
+        You can join our discord server here.<br>
+        <iframe src="https://discord.com/widget?id=926973586252660736&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        <br />
+        <a href="https://kcac.ca">🏠Back to Home🏠</a><br /><br />
+      </div>
+    </div>  <script src="acctoolbar.min.js"></script>
+    
+    <script>
+      window.onload = function() {
+        window.micAccessTool = new MicAccessTool({
+    
+          buttonPosition: 'right', // default is 'left'
+        });
+      }
+    </script>
+        <script>
+          var ua = navigator.userAgent.toLowerCase();
+          var isWeixin = ua.indexOf('micromessenger') == -1;
+          if (!isWeixin) {
+          window.location.href = "https://kcac.ca/wx"
+          }
+          </script>
+  </body>
+</html>
