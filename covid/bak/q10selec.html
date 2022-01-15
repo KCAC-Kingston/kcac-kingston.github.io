@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="icon" href="images/KCAC_Logo.ico" />
+    <title>Kingston Chinese Alliance Church 京士顿华人宣道会</title>
+    <link
+      rel="stylesheet"
+      href="splash_style.css"
+      type="text/css"
+      media="all"
+      title="no title"
+      charset="utf-8"
+    />
+  </head>
+  <body id="splash">
+    <div id="wrapper">
+      <div id="center_box">
+        <div id="splash"></div>
+
+        <b><h1>Welcome to KCAC<br>歡迎來到京士顿华人宣道会</h1></b>
+      <h1>您参加的是哪个崇拜？</h1>如果您参加的是联合崇拜，请选择‘英文崇拜’<br>
+		<a href="q11cn.html" class="button">中文崇拜</a> <a href="q11en.html" class="button">英文崇拜（或联合崇拜）</a><a href="q11other.html" class="button">其他</a>
+        <br /> 
+     
+      </div>
+    </div><script src="acctoolbar.min.js"></script>
+    
+    <script>
+      window.onload = function() {
+        window.micAccessTool = new MicAccessTool({
+    
+          buttonPosition: 'right', // default is 'left'
+        });
+      }
+      window.history.pushState(null, "", window.location.href);
+window.onpopstate = function () {
+  window.location.href = "back.html"
+};
+    </script>
+  </body>
+</html>
