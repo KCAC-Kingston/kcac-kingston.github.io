@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="icon" href="images/KCAC_Logo.ico" />
+    <title>KCAC RDS</title>
+    <link
+      rel="stylesheet"
+      href="splash_style.css"
+      type="text/css"
+      media="all"
+      title="no title"
+      charset="utf-8"
+    />
+  </head>
+  <body id="splash">
+    <div id="wrapper">
+      <div id="center_box">
+        <div id="splash"></div>
+
+        <b><h1>KCAC Live</h1></b>
+        redirecting...<br />
+  if you didn't see redirect happen, <br>
+        <a href="https://liveservice.kcac.ca">Let's Go</a><br /><br />
+      </div>
+    </div>  
+        <script>
+          var ua = navigator.userAgent.toLowerCase();
+          var isWeixin = ua.indexOf('micromessenger') == -1;
+          if (!isWeixin) {
+          window.location.href = "https://live.kcac.ca/wx"
+          }
+          else{
+            window.location.href = "https://live.kcac.ca"
+          }
+          </script>
+  </body>
+</html>
