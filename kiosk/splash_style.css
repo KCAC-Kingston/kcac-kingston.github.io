@@ -193,7 +193,13 @@ h3 {
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
 }
-
+.grntable {
+  background-color: #4CAF50;
+  border-radius: 3px;
+  padding: 0px 10px 0px 10px;
+  color: #000000;
+  margin: 0 auto;
+}
 audio 
 {
 	display:none;
