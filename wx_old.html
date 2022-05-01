@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="icon" href="images/KCAC_Logo.ico" />
+    <title>Kingston Chinese Alliance Church 京士顿华人宣道会</title>
+    <link
+      rel="stylesheet"
+      href="splash_style.css"
+      type="text/css"
+      media="all"
+      title="no title"
+      charset="utf-8"
+    />
+  </head>
+  <body id="splash">
+    <div id="wrapper">
+      <div id="center_box">
+        <div id="splash"></div>
+
+        <b
+          ><h1>WeChat browser not supported<br />本页面不支持从微信浏览器中打开</h1></b
+        ><br />
+        <b>Please click the three dot on top right and select ‘open in browser’ <br>请点击右上角三个点，选择‘浏览器打开’</b><br>(Shown in the picture below 如下图所示)<br><img src='images/oib.jpeg' width =40%><br>
+        
+        Alternatively, please copy this link below to your phone browser.<br>或者请复制下列网页并使用手机浏览器打开。
+        <br><br><b>kcac.ca</b><br><br>
+      </div>
+    </div>
+	<script>
+	function goBack() {
+	  window.history.back();
+	}
+	</script><script src="acctoolbar.min.js"></script>
+    
+    <script>
+      window.onload = function() {
+        window.micAccessTool = new MicAccessTool({
+    
+          buttonPosition: 'right', // default is 'left'
+        });
+      }
+    </script>
+    <script>
+      var ua = navigator.userAgent.toLowerCase();
+      var isWeixin = ua.indexOf('micromessenger') != -1;
+      if (!isWeixin) {
+      window.location.href = "https://kcac.ca"
+      }
+      </script>
+      <script>
+        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+          window.location = 'microsoft-edge:' + window.location;
+          setTimeout(function() {
+            window.location = 'https://go.microsoft.com/fwlink/?linkid=2135547';
+          }, 1);
+        }
+      </script>
+  </body>
+</html>
