@@ -203,15 +203,15 @@
     <key>enableZoomText</key>
     <false />
     <key>examKeySalt</key>
-    <data>CdkwC7HVjrhs4T40i9qQtZSH7W9oiXGqiZB0pSEZHoU=</data>
+    <data>NScqllE8gxIbsjyj9LlY2wsUVNviYxiHuuDkIkvaFRk=</data>
     <key>examSessionClearCookiesOnEnd</key>
     <true />
     <key>examSessionClearCookiesOnStart</key>
     <true />
     <key>examSessionReconfigureAllow</key>
-    <false />
+    <true />
     <key>examSessionReconfigureConfigURL</key>
-    <string />
+    <string>https://kcac.ca/kiosk/start.seb</string>
     <key>exitKey1</key>
     <integer>2</integer>
     <key>exitKey2</key>
@@ -247,7 +247,7 @@
     <key>insideSebEnableSwitchUser</key>
     <false />
     <key>insideSebEnableVmWareClientShade</key>
-    <false />
+    <true />
     <key>killExplorerShell</key>
     <true />
     <key>lockOnMessageSocketClose</key>
@@ -1399,11 +1399,11 @@
     <key>sebServiceIgnore</key>
     <false />
     <key>sebServicePolicy</key>
-    <integer>1</integer>
+    <integer>2</integer>
     <key>sendBrowserExamKey</key>
     <false />
     <key>setVmwareConfiguration</key>
-    <false />
+    <true />
     <key>showApplicationLogButton</key>
     <false />
     <key>showInputLanguage</key>
