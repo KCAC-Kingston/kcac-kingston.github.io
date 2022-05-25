@@ -28,9 +28,11 @@
         <a href="start.seb" class="button">re-config SEB</a>
         <a href="q4e.html" class="button">Select Service</a>
         <a href="quit.html#quit" class="button_n">Quit SEB</a>
+        <text id="msg">TEST MODE</body>
     </div>
     <script src="acctoolbar.min.js"></script>
 
+    
 <script>
   window.onload = function() {
     window.micAccessTool = new MicAccessTool({
@@ -38,6 +40,18 @@
       buttonPosition: 'right', // default is 'left'
     });
   }
+</script>
+<script>
+  var password = prompt("Enter in the password");
+        if (password=="1230") {
+            
+          
+        }
+        else 
+        {
+          document.getElementById("msg").value = "test";  
+          location = "index.html"
+        }
 </script>
   </body>
 </html>
