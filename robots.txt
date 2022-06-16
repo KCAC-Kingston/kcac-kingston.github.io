@@ -5,5 +5,7 @@ Disallow: /cursors
 Disallow: /agreement.html
 Disallow: /404.html
 Disallow: /wx.html
+Disallow: /covid/*
+Allow /covid/index.html
 
 Sitemap: https://kcac.ca/sitemap.xml
