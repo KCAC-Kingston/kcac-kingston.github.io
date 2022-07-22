@@ -9,4 +9,4 @@ Disallow: /covid/*
 Allow: /covid/index.html
 
 Sitemap: https://kcac.ca/sitemap.xml
-Sitemap: https://kcac.ca/livingwaterfm/sitemap.xml
+Sitemap: https://lwfm.kcac.ca/sitemap.xml
