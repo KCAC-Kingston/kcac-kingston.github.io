@@ -73,10 +73,10 @@ async function startCountdown() {
     ).innerHTML = `${days} Days, ${hours} Hours, ${minutes} Minutes`;
     
     if(serviceName.includes("combined")|| serviceName.includes("Combined")||serviceName.includes("联合"||serviceName.includes("聯合"))){
-      comboText = '<b">'+'Please Note this week we will have a combined Serivce starting at 10AM!' 
+      comboText = '<b">'+'Please Note this week we will have a combined Sunday Serivce starting at 10AM!' 
       +'<br>'+
-      '请注意本周我们将会有联合崇拜,十點開始。' + '<br> <br>';
-      console.log("combo Service Detected");
+      '请注意本周我们将会有主日联合崇拜,十點開始。' + '<br> <br>';
+     // console.log("combo Service Detected");
       document.getElementById("comboService").innerHTML = comboText;
       
     }
