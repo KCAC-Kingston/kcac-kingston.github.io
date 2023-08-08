@@ -8601,3 +8601,56 @@ input, select, textarea {
 			#wrapper.divided > .invert:first-child {
 				box-shadow: none !important;
 			}
+
+
+			.popup {
+				display: none;
+				position: fixed;
+				padding: 10px;
+				width: 300px;
+				left: 50%;
+				margin-left: -150px;
+				height: 350px;
+				top: 20%;
+				margin-top: -50px;
+				background: #e0ffdf;
+				z-index: 20;
+			  }
+			  
+			  #popup1 {
+				-webkit-box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+				box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+			  }
+			  
+			  
+			  #popup2 {
+				-webkit-box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+				box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+			  }
+			  
+			  a,
+a:visited {
+  text-decoration: none;
+  color: #FFF;
+  font-weight: bold;
+  display: block;
+  margin: 10px 0;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+.popup a,
+.popup a:visited {
+  color: #1abc9c;
+}
+
+p {
+	margin: 1em 0;
+}
+
+p+p+p {
+	font-size: 60%;
+}

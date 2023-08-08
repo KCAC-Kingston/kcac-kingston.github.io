@@ -53,6 +53,8 @@ async function startCountdown() {
       clearInterval(intervalId);
       document.getElementById("countdown").innerHTML =
         "Our service is now live";
+        document.getElementById("comboService").innerHTML = "Our service is now live 我们现在正在进行崇拜";
+        show('popup1');
       return;
     }
 
@@ -78,6 +80,7 @@ async function startCountdown() {
       '请注意本周我们将会有主日联合崇拜,十點開始。' + '<br> <br>';
      // console.log("combo Service Detected");
       document.getElementById("comboService").innerHTML = comboText;
+      show('popup1');
       
     }
 
@@ -93,3 +96,14 @@ async function startCountdown() {
 }
 
 startCountdown();
+
+$ = function(id) {
+  return document.getElementById(id);
+}
+
+var show = function(id) {
+	$(id).style.display ='block';
+}
+var hide = function(id) {
+	$(id).style.display ='none';
+}
