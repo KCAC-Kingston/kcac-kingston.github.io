@@ -340,7 +340,7 @@
 				// Match *.pages.dev or website-dev.kcac.ca
 				if (host.endsWith(".pages.dev") || host === "website-dev.kcac.ca") {
 					const bar = document.createElement("div");
-					bar.textContent = "⚠️ DEV SITE ⚠️";
+					bar.innerHTML = '⚠️ DEV SITE 开发网站 ⚠️ &nbsp; <a href="https://kcac.ca" style="color:yellow; text-decoration:underline;">Go to Live Site</a>';
 					bar.style.position = "fixed";
 					bar.style.top = "0";
 					bar.style.left = "0";
