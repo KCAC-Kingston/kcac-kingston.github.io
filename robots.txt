@@ -1,11 +1,4 @@
-User-agent: *
+if this can be seen on live or dev site, something isn't right!
 
-Disallow: /cursors
-Disallow: /agreement.html
-Disallow: /404.html
-Disallow: /wx*
-Disallow: /covid/*
-Allow: /covid/index.html
+don't delete this file!
 
-Sitemap: https://kcac.ca/sitemap.xml
-Sitemap: https://lwfm.kcac.ca/sitemap.xml
