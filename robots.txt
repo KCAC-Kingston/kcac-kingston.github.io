@@ -1,3 +1,11 @@
-# dev branch robots.txt
 User-agent: *
-Disallow: /
+
+Disallow: /cursors
+Disallow: /agreement.html
+Disallow: /404.html
+Disallow: /wx*
+Disallow: /covid/*
+Allow: /covid/index.html
+
+Sitemap: https://kcac.ca/sitemap.xml
+Sitemap: https://lwfm.kcac.ca/sitemap.xml
