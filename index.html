@@ -333,5 +333,32 @@
 				  }, 1);
 				}
 			  </script>
+				<script>
+				(function() {
+				const host = window.location.hostname;
+
+				// Match *.pages.dev or website-dev.kcac.ca
+				if (host.endsWith(".pages.dev") || host === "website-dev.kcac.ca") {
+					const bar = document.createElement("div");
+					bar.textContent = "⚠️ DEV SITE ⚠️";
+					bar.style.position = "fixed";
+					bar.style.top = "0";
+					bar.style.left = "0";
+					bar.style.width = "100%";
+					bar.style.background = "darkred";
+					bar.style.color = "white";
+					bar.style.textAlign = "center";
+					bar.style.fontSize = "1.2em";
+					bar.style.fontWeight = "bold";
+					bar.style.padding = "0.5em";
+					bar.style.zIndex = "9999";
+					
+					// Push page content down so the bar doesn't cover it
+					document.body.style.paddingTop = "3em";
+					document.body.prepend(bar);
+				}
+				})();
+				</script>
+
 	</body>
 </html>
