@@ -36,7 +36,7 @@
 					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
 						<div class="content">
 							<h2>Kingston Chinese Alliance Church<hr>京士頓華人宣道會</h2>
-							<p class="major">倚靠聖靈大能  向左向右開展</p>
+							<p class="major" id="churchMotto">倚靠聖靈大能  向左向右開展</p>
 							<div id="comboService"></div><br>
 							<ul class="actions stacked">
 								<li><a href="#first" class="button big wide smooth-scroll-middle">Attend Service 參加崇拜</a>
@@ -80,16 +80,19 @@
 					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
 						<div class="content">
 							<h2>Service Information<br>崇拜信息</h2>
-							<p>中文崇拜 每周日上午11:00 <br>Chinese Service: Every Sunday at 11:00am<br><hr>
-								</b> <br> 英文崇拜 每周日上午11:00 <br>English Service: Every Sunday at 11:00am <br>(Church Basement 教会地下室)<br><hr>
-								祷告会 Prayer Meeting <br>每周三晚上7点 Every Wednesday at 7:00pm <br>
-								</p>
+							<div class="table-wrapper">
+								<table>
+									<tbody id="serviceOverview">
+										<tr>
+											<td colspan="2">Loading service information...</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 							<ul class="actions stacked">
 								<li><a href="#second" class="button big wide smooth-scroll-middle">Service In Person 现场崇拜</a><a href="#third" class="button big wide smooth-scroll-middle">Service Online 在线崇拜</a></li>
-							<p>Prayer meetings are currently hosted on Zoom. Please email us for more information.<br>
-							祷告会目前在Zoom上进行，请Email我们获取更多信息
-							<br>Service time is subject to change. Check our website or discord server for the latest time.<br>
-							聚會時間有可能發生變化。关注我们的网站或discord服务器獲取最新的崇拜時間。
+							<p>Service times may change. Check here or contact us for the latest information.<br>
+							聚會時間有可能發生變化。請在這裡查看或聯絡我們獲取最新資訊。
 							</p>
 							</ul>
 						</div>
@@ -129,55 +132,23 @@
 									</td>
 								  </table></p>
 							<ul class="actions stacked">
-								<li><a href="https://live.kcac.ca" class="button">Attend Online Service 在线参加崇拜</a><a href="https://youtube.com/kcacmedia" class="button">Watch Past Services 回看过往崇拜</a></li>
+								<li><a href="https://live.kcac.ca" class="button">Attend Online Service 在线参加崇拜</a><a href="past-services.html" class="button">Watch Past Services 回看过往崇拜</a></li>
 							</ul>
 						</div>
 						<div class="image">
 							<img src="images/live_device_wide_bg.jpg" alt="" />
 						</div>
 					</section>
-
-
-
-					<section class="wrapper style1 align-center">
-						<div class="inner">
-							<h2>Living Water<br>活水FM </h2>
-							<p><br />
-								<br> <img class="image right" src="https://lwfm.kcac.ca/assets/img/lvfm.jpg">
-								<br>「活水fm」是由加拿大女王大学校园团契----活水团契的一群基督徒们出品的访谈聊天类的播客节目。我们的目标是从生活中观察到的每一件事中去体会圣经的含义和预示，希望带给听众朋友们我们自己关于圣经的理解和体会，以及上帝在我们生命中的带领和改变。希望在这里，你能被鼓励，被理解，被安慰，被爱。
-								
-								 <ul class="actions stacked">
-									<li><a href="https://lwfm.kcac.ca" class="button big wide smooth-scroll-middle">Go Listen 前往收听</a>
-									</li></ul>
-
-								
-						</div>
-
-					</section>
-
 					<section class="spotlight style1 orient-left content-align-right image-position-center onscroll-image-fade-in" id="third">
 						<div class="content">
 							<h2>People<br>人员</h2>
 							<p>
 								<div class="table-wrapper">
 									<table>
-										<tbody>
+										<tbody id="peopleTableBody">
 											<tr>
-												<td>Consulting Pastor<br>顧問牧師</td>
-												<td>Rev. Kong Lo<br>盧鋼牧師</td>
-																								
+												<td colspan="2">Loading people...</td>
 											</tr>
-											<tr>
-												<td>Youth Ministry Pastor<br>青少年事工傳道</td>
-												<td> Pastor Stephen Hung<br>孔令傳 傳道</td>
-												
-											</tr>
-											<tr>
-												<td>Vice Chairman<br>副主席</td>
-												<td>Elder Qingguo Li<br>李慶國 長老</td>
-												
-											</tr>
-
 										</tbody>
 										<tfoot>
 											<tr>
@@ -243,20 +214,41 @@
 						</p>
 						<ul class="actions stacked">
 							<li><a href="links.html" class="button">Links 链接</a></li>
+							<li><a href="https://lwfm.kcac.ca" class="button">Living Water 活水FM</a></li>
 						</ul>
 					</div>
 
-				</section>
+					</section>
 
-				<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="calendar">
-					<div class="content">
-						<h2>Calendar 日历</h2>
-						<iframe 
-							src="https://calendar.google.com/calendar/embed?height=500&wkst=1&ctz=America%2FToronto&showTitle=0&mode=AGENDA&showNav=0&showPrint=0&showCalendars=0&src=YzhlZDMxNTFiZjYzOWZkMzEyMjkxMTA5YWFkNWM0MWQzMzQ1ZWU5NTMzYTYzZjE3NzJiN2QzMGQwOTBmZDViM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23F09300" 
-							style="border:solid 1px #777; width:100%; height:500px;" 
-							frameborder="0" 
-							scrolling="no">
-						</iframe>
+					<section class="wrapper style1 align-center" id="announcements">
+						<div class="inner">
+							<h2>Announcements<br>公告</h2>
+							<div class="items style1 medium onscroll-fade-in" id="announcementList">
+								<section>
+									<div class="inner">
+										<h3>Loading announcements...</h3>
+									</div>
+								</section>
+							</div>
+							<p id="announcementListMeta"></p>
+							<ul class="actions stacked">
+								<li><a href="announcements.html" class="button">All Announcements 全部公告</a></li>
+							</ul>
+						</div>
+					</section>
+
+					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="calendar">
+						<div class="content">
+							<h2>Upcoming Services<br>近期崇拜</h2>
+						<div class="table-wrapper">
+							<table>
+								<tbody id="upcomingServices">
+									<tr>
+										<td>Loading upcoming services...</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				
 					<div class="image">
@@ -269,11 +261,10 @@
 				<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in" id="contactus">
 					<div class="content">
 						<h2>Contact information<br>联系我们</h2>
+						<p id="contactDetails">
+							Loading contact information...<br />
+						</p>
 						<p>
-							Address📍: <a href ="https://goo.gl/maps/fV9T1BLJnpVei6By8">230 MacDonnell St, Kingston, ON K7L 4C2</a><br />
-							Phone📞: (613) 548-7270<br />
-							Emails 📧<br />
-							<img src="images/email_addr.png" width="350" height="70" /><br>
 							<a href="discord.html" class="button">Discord Server</a>
 						</p>
 					</div>
