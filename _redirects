@@ -1,3 +1,21 @@
 /live  https://live.kcac.ca  302
 /covid  https://covid-prud.kcac.ca/webclient_ng  302
 /livingwaterfm https://lwfm.kcac.ca 302
+
+# WordPress, PHP, and secret-file probes. KCAC is a static Cloudflare Pages site.
+/admin /technology-volunteer 302
+/xmlrpc /technology-volunteer 302
+/.env /technology-volunteer 302
+/backend/.env /technology-volunteer 302
+/config /technology-volunteer 302
+/wp-admin /technology-volunteer 302
+/admin/* /technology-volunteer 302
+/.env* /technology-volunteer 302
+/.git/* /technology-volunteer 302
+/config/* /technology-volunteer 302
+/cgi-bin/* /technology-volunteer 302
+/wp-admin/* /technology-volunteer 302
+/wp-content/* /technology-volunteer 302
+/wp-includes/* /technology-volunteer 302
+/:wpbase/wp-includes/* /technology-volunteer 302
+/*.php /technology-volunteer 302
