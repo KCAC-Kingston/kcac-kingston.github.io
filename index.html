@@ -23,7 +23,7 @@
 		<title>Kingston Chinese Alliance Church 京士頓華人宣道會</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css?v=servicemanager-20260804" />
+		<link rel="stylesheet" href="assets/css/main.css?v=servicemanager-20260805" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	<style>iframe {width:100%;height:100%;}</style>
 	</head>
@@ -31,6 +31,17 @@
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
+				<div id="combinedServicePopup" class="service-alert-modal" role="dialog" aria-modal="true" aria-labelledby="combinedServicePopupTitle" aria-describedby="combinedServicePopupMessage" aria-hidden="true" hidden>
+					<div class="service-alert-modal__panel">
+						<button type="button" class="service-alert-modal__close" id="combinedServicePopupClose" aria-label="Close combined service notice">&times;</button>
+						<h2 id="combinedServicePopupTitle">Combined Service Notice<br>聯合崇拜通知</h2>
+						<p id="combinedServicePopupMessage"></p>
+						<ul class="actions stacked">
+							<li><a href="https://live-beta.kcac.ca" class="button">Attend Online Service (beta) 在线参加崇拜（测试版）</a></li>
+							<li><button type="button" class="button" id="combinedServicePopupDismiss">Close 關閉</button></li>
+						</ul>
+					</div>
+				</div>
 
 				<!-- One -->
 					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
@@ -133,6 +144,7 @@
 								  </table></p>
 							<ul class="actions stacked">
 								<li><a href="https://live.kcac.ca" class="button">Attend Online Service 在线参加崇拜</a><a href="past-services.html" class="button">Watch Past Services 回看过往崇拜</a></li>
+								<li><a href="https://live-beta.kcac.ca/" class="button">Online Service Beta 在线崇拜测试版</a></li>
 							</ul>
 						</div>
 						<div class="image">
@@ -290,7 +302,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script src="live.js?v=servicemanager-20260804"></script>
+			<script src="live.js?v=servicemanager-20260805-2"></script>
 			<script src="acctoolbar.min.js"></script>
     
 			<script>

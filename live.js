@@ -31,6 +31,7 @@
       "countdown",
       "upcomingServices",
       "pastServicesList",
+      "combinedServicePopup",
     ]);
     const needsBase = hasAnyElement([
       "churchMotto",
@@ -128,6 +129,7 @@
 
   function renderLiveData(data) {
     renderCountdown(data);
+    renderCombinedServicePopup(data);
     renderUpcomingServices(data.services);
     renderPastServices(data.services);
   }
@@ -236,6 +238,66 @@
     }
 
     element.textContent = "";
+  }
+
+  function renderCombinedServicePopup(data) {
+    const popup = byId("combinedServicePopup");
+    if (!popup) {
+      return;
+    }
+
+    const service = nextScheduledService(data && data.services);
+    if (!isCombinedService(service)) {
+      hideCombinedServicePopup(popup);
+      return;
+    }
+
+    const message = byId("combinedServicePopupMessage");
+    const serviceTitle = text(service.title) || "the next service";
+    const start = formatServiceStartLabel(service);
+    if (message) {
+      clear(message);
+      message.appendChild(document.createTextNode("Please note: " + serviceTitle + " starts at " + start + "."));
+      message.appendChild(document.createElement("br"));
+      message.appendChild(document.createTextNode("請注意：" + serviceTitle + " 開始時間為 " + start + "。"));
+    }
+    bindCombinedServicePopup(popup);
+    popup.hidden = false;
+    popup.setAttribute("aria-hidden", "false");
+  }
+
+  function bindCombinedServicePopup(popup) {
+    if (popup.__combinedServicePopupBound) {
+      return;
+    }
+
+    const closeButtons = [byId("combinedServicePopupClose"), byId("combinedServicePopupDismiss")];
+    closeButtons.forEach(function (button) {
+      if (button) {
+        button.addEventListener("click", function () {
+          hideCombinedServicePopup(popup);
+        });
+      }
+    });
+
+    popup.addEventListener("click", function (event) {
+      if (event.target === popup) {
+        hideCombinedServicePopup(popup);
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !popup.hidden) {
+        hideCombinedServicePopup(popup);
+      }
+    });
+
+    popup.__combinedServicePopupBound = true;
+  }
+
+  function hideCombinedServicePopup(popup) {
+    popup.hidden = true;
+    popup.setAttribute("aria-hidden", "true");
   }
 
   function renderMeetingOverview(rows) {
@@ -396,7 +458,7 @@
       const link = document.createElement("a");
       link.className = "button";
       link.href = LIVE_BETA_URL;
-      link.textContent = "Live";
+      link.textContent = "Live Beta";
       actionCell.appendChild(link);
 
       row.appendChild(dateCell);
@@ -813,6 +875,23 @@
       return text(row.label) === label;
     });
     return match ? text(match.value) : "";
+  }
+
+  function nextScheduledService(services) {
+    return (services && services.next) || array(services && services.upcoming)[0] || null;
+  }
+
+  function formatServiceStartLabel(service) {
+    const time = service && (service.serviceTimeLabel || formatServiceTime(service.serviceTime));
+    return text(time) || "the scheduled time";
+  }
+
+  function isCombinedService(service) {
+    const title = text(service && service.title);
+    return service && (
+      service.serviceKind === "combined" ||
+      /combined|聯合|联合/i.test(title)
+    );
   }
 
   function isCombinedOrSpecial(service) {
