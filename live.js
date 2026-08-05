@@ -1,7 +1,8 @@
 (function () {
   "use strict";
 
-  const SERVICE_MANAGER_ORIGIN = "https://servicemanager.kcac.ca";
+  const SERVICE_MANAGER_PUBLIC_API_BASE = "https://servicemanager.kcac.ca/api/v1";
+  const LIVE_BETA_URL = "https://live-beta.kcac.ca";
   const CHURCH_TIME_ZONE = "America/Toronto";
   const ANNOUNCEMENT_PREVIEW_PAGE_SIZE = 6;
   const ANNOUNCEMENT_PAGE_SIZE = 25;
@@ -28,34 +29,37 @@
       "comboService",
       "serviceTitle",
       "countdown",
-      "serviceOverview",
-      "peopleTableBody",
-      "contactDetails",
       "upcomingServices",
       "pastServicesList",
     ]);
-    const needsBase = hasAnyElement(["churchMotto", "fellowshipList"]);
+    const needsBase = hasAnyElement([
+      "churchMotto",
+      "fellowshipList",
+      "serviceOverview",
+      "peopleTableBody",
+      "contactDetails",
+    ]);
     const needsAnnouncementPreview = hasAnyElement(["announcementList"]);
     const needsAnnouncementPage = hasAnyElement(["announcementPageList"]);
     const announcementPage = currentPageNumber();
 
     const liveRequest = needsLive
-      ? fetchJson("/api/v1/live").catch(function (error) {
+      ? fetchPublicJson("/live").catch(function (error) {
           return { error: error };
         })
       : Promise.resolve(null);
     const baseRequest = needsBase
-      ? fetchJson("/api/v1/base").catch(function (error) {
+      ? fetchPublicJson("/base").catch(function (error) {
           return { error: error };
         })
       : Promise.resolve(null);
     const announcementPreviewRequest = needsAnnouncementPreview
-      ? fetchJson(announcementEndpoint(1, ANNOUNCEMENT_PREVIEW_PAGE_SIZE)).catch(function (error) {
+      ? fetchPublicJson(announcementEndpoint(1, ANNOUNCEMENT_PREVIEW_PAGE_SIZE)).catch(function (error) {
           return { error: error };
         })
       : Promise.resolve(null);
     const announcementPageRequest = needsAnnouncementPage
-      ? fetchJson(announcementEndpoint(announcementPage, ANNOUNCEMENT_PAGE_SIZE)).catch(function (error) {
+      ? fetchPublicJson(announcementEndpoint(announcementPage, ANNOUNCEMENT_PAGE_SIZE)).catch(function (error) {
           return { error: error };
         })
       : Promise.resolve(null);
@@ -98,8 +102,8 @@
     }
   }
 
-  async function fetchJson(path) {
-    const response = await fetch(SERVICE_MANAGER_ORIGIN + path, {
+  async function fetchPublicJson(path) {
+    const response = await fetch(SERVICE_MANAGER_PUBLIC_API_BASE + path, {
       cache: "no-store",
       headers: {
         Accept: "application/json",
@@ -107,7 +111,7 @@
     });
 
     if (!response.ok) {
-      throw new Error(path + " returned " + response.status);
+      throw new Error(SERVICE_MANAGER_PUBLIC_API_BASE + path + " returned " + response.status);
     }
 
     return response.json();
@@ -119,17 +123,17 @@
       page: String(page),
       pageSize: String(pageSize),
     });
-    return "/api/v1/announcements?" + params.toString();
+    return "/announcements?" + params.toString();
   }
 
   function renderLiveData(data) {
     renderCountdown(data);
-    renderChurchProfile(data.churchInfo);
     renderUpcomingServices(data.services);
     renderPastServices(data.services);
   }
 
   function renderBaseData(data) {
+    renderChurchProfile(data.churchProfile);
     renderMotto(data.churchProfile);
     renderFellowships(data.fellowships);
   }
@@ -308,13 +312,19 @@
       .filter(function (line) {
         return !phone || line !== phone;
       });
-    const emailLines = unique([profile.email].concat(array(profile.contactLines)).map(text).filter(Boolean));
+    const contactLines = unique(array(profile.contactLines).map(text).filter(Boolean));
+    const emailLines = unique([profile.email].concat(contactLines.filter(isEmailAddress)).map(text).filter(Boolean));
+    const otherContactLines = contactLines.filter(function (line) {
+      return line !== phone && emailLines.indexOf(line) === -1;
+    });
+    const contactTextColor = elementTextColor(container);
 
     if (addressLines.length) {
       container.appendChild(document.createTextNode("Address: "));
       const link = document.createElement("a");
       link.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(addressLines.join(", "));
       link.textContent = addressLines.join(", ");
+      styleContactLink(link, contactTextColor);
       container.appendChild(link);
       container.appendChild(document.createElement("br"));
     }
@@ -333,8 +343,15 @@
         const link = document.createElement("a");
         link.href = "mailto:" + email;
         link.textContent = email;
+        styleContactLink(link, contactTextColor);
         container.appendChild(link);
       });
+      container.appendChild(document.createElement("br"));
+    }
+
+    if (otherContactLines.length) {
+      container.appendChild(document.createTextNode("Contact: "));
+      appendLines(container, otherContactLines);
       container.appendChild(document.createElement("br"));
     }
 
@@ -378,8 +395,8 @@
 
       const link = document.createElement("a");
       link.className = "button";
-      link.href = service.youtubeWatchUrl || "https://live.kcac.ca";
-      link.textContent = service.youtubeWatchUrl ? "Watch" : "Live";
+      link.href = LIVE_BETA_URL;
+      link.textContent = "Live";
       actionCell.appendChild(link);
 
       row.appendChild(dateCell);
@@ -594,16 +611,17 @@
   }
 
   function renderLiveError() {
-    appendTableMessage(byId("serviceOverview"), 2, "Service information is temporarily unavailable.");
-    appendTableMessage(byId("peopleTableBody"), 2, "People information is temporarily unavailable.");
     appendTableMessage(byId("upcomingServices"), 1, "Upcoming services are temporarily unavailable.");
     setText(byId("serviceTitle"), "Service information unavailable");
     setText(byId("countdown"), "");
     setText(byId("comboService"), "");
-    setText(byId("contactDetails"), "Contact information is temporarily unavailable.");
   }
 
   function renderBaseError() {
+    appendTableMessage(byId("serviceOverview"), 2, "Service information is temporarily unavailable.");
+    appendTableMessage(byId("peopleTableBody"), 2, "People information is temporarily unavailable.");
+    setText(byId("contactDetails"), "Contact information is temporarily unavailable.");
+
     const list = byId("fellowshipList");
     if (list) {
       clear(list);
@@ -814,6 +832,26 @@
 
   function hasText(value) {
     return text(value).length > 0;
+  }
+
+  function styleContactLink(link, color) {
+    link.style.color = color;
+    link.style.display = "inline";
+    link.style.fontWeight = "inherit";
+    link.style.margin = "0";
+    link.style.textDecoration = "underline";
+  }
+
+  function elementTextColor(element) {
+    if (window.getComputedStyle) {
+      return window.getComputedStyle(element).color;
+    }
+
+    return "inherit";
+  }
+
+  function isEmailAddress(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text(value));
   }
 
   function text(value) {

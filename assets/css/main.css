@@ -8647,6 +8647,20 @@ a:active {
   color: #1abc9c;
 }
 
+#contactDetails a,
+#contactDetails a:visited {
+  color: inherit;
+  display: inline;
+  font-weight: inherit;
+  margin: 0;
+  text-decoration: underline;
+}
+
+#contactDetails a:hover,
+#contactDetails a:active {
+  color: #47D3E5;
+}
+
 p {
 	margin: 1em 0;
 }
