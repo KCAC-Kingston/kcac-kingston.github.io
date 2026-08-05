@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<head>
+			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+			<meta name="title" content="Kingston Chinese Alliance Church" />
+			<meta
+			  name="description"
+			  content="Kingston Chinese Alliance Church京士頓華人宣道會 announcements"
+			/>
+			<meta
+			  name="keywords"
+			  content="church Kingston Chinese 金士顿 金斯顿 京士顿 教堂 教会 基督教 宗教 华人 华人教会 中文教会 公告"
+			/>
+			<meta name="robots" content="index, follow" />
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<link rel="icon" href="images/KCAC_Logo.ico" />
+
+		<title>Announcements 公告</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css?v=servicemanager-20260804" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<div id="wrapper" class="divided">
+			<section class="banner style1 orient-left content-align-left image-position-right onload-image-fade-in onload-content-fade-right">
+				<div class="content">
+					<h2>Announcements<br>公告</h2>
+					<p class="major">Church updates and notices.</p>
+					<ul class="actions stacked">
+						<li><a href="index.html#announcements" class="button big wide">Home 首页</a></li>
+					</ul>
+				</div>
+				<div class="image">
+					<img src="images/calendar.jpg" alt="" />
+				</div>
+			</section>
+
+			<section class="wrapper style1 align-center">
+				<div class="inner">
+					<h2>Current Announcements<br>目前公告</h2>
+					<p id="announcementPageMeta"></p>
+					<div class="items style1 medium" id="announcementPageList">
+						<section>
+							<div class="inner">
+								<h3>Loading announcements...</h3>
+							</div>
+						</section>
+					</div>
+					<ul class="actions stacked" id="announcementPagination"></ul>
+				</div>
+			</section>
+
+			<footer class="wrapper style1 align-center">
+				<div class="inner">
+					<p>Kingston Chinese Alliance Church 京士顿华人宣道会</p><br>
+					<img src="images/KCAC Logo Long.png" width="283" height="126">
+				</div>
+			</footer>
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="live.js?v=servicemanager-20260804"></script>
+		<script src="acctoolbar.min.js"></script>
+
+		<script>
+		  window.onload = function() {
+			window.micAccessTool = new MicAccessTool({
+			  buttonPosition: 'right',
+			});
+		  }
+		</script>
+		<script>
+		  var ua = navigator.userAgent.toLowerCase();
+		  var isWeixin = ua.indexOf('micromessenger') == -1;
+		  if (!isWeixin) {
+		  window.location.href = "https://kcac.ca/wx"
+		  }
+		  </script>
+		  <script>
+			if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+			  window.location = 'microsoft-edge:' + window.location;
+			  setTimeout(function() {
+				window.location = 'https://go.microsoft.com/fwlink/?linkid=2135547';
+			  }, 1);
+			}
+		  </script>
+	</body>
+</html>

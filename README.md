@@ -23,11 +23,10 @@ This website is currently based on ['Story' tamplete](https://html5up.net/story)
 
 Legacy website rely on splash_style.css for formatting. Currently COVID and Kiosk pages are rely on this stylesheet. 
 
-# How the count down timer work
+# How the dynamic website data works
 
-This data is pulled from church online platform, driven our liveservice.kcac.ca platform. Their API reference can be read [here](https://developers.online.church/docs/creating-a-countdown-timer)
+Service details, announcements, ministry/fellowship data, people, motto, and contact information are loaded from the non-admin public ServiceManager API at `https://servicemanager.kcac.ca/api/v1`.
 
 # How the accessbility toolbar work
 
 This toolbar is based on the [Accessibility Toolbar Plugin](https://mickidum.github.io/acc_toolbar/)
-
