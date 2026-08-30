@@ -2,7 +2,7 @@
   "use strict";
 
   const SERVICE_MANAGER_PUBLIC_API_BASE = "https://servicemanager.kcac.ca/api/v1";
-  const LIVE_BETA_URL = "https://live-beta.kcac.ca";
+  const LIVE_URL = "https://live.kcac.ca";
   const CHURCH_TIME_ZONE = "America/Toronto";
   const ANNOUNCEMENT_PREVIEW_PAGE_SIZE = 6;
   const ANNOUNCEMENT_PAGE_SIZE = 25;
@@ -457,8 +457,8 @@
 
       const link = document.createElement("a");
       link.className = "button";
-      link.href = LIVE_BETA_URL;
-      link.textContent = "Live Beta";
+      link.href = LIVE_URL;
+      link.textContent = "Live";
       actionCell.appendChild(link);
 
       row.appendChild(dateCell);
